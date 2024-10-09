@@ -1,0 +1,14 @@
+Source: amix-vimrc-tweaks
+Section: editors
+Priority: optional
+Maintainer: Antoni Aloy Torrens <aaloytorrens@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 3.9.6
+
+Package: amix-vimrc-tweaks
+Architecture: all
+Depends:
+ ${misc:Depends},
+ vim
+Description: The ultimate vimrc configuration from amix with tweaks
+ The ultimate vimrc configuration forked from vimrc with additional tweaks

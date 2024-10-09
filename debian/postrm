@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+# Check if my_configs.vim is empty or contains only spaces
+if [ ! -s /opt/amix-vimrc-tweaks/my_configs.vim ] || [ -z "$(grep -v '^[[:space:]]*$' /opt/amix-vimrc-tweaks/my_configs.vim)" ]; then
+    rm -f /opt/amix-vimrc-tweaks/my_configs.vim
+fi
+
+# Check if my_plugins directory is empty
+if [ -d /opt/amix-vimrc-tweaks/my_plugins ] && [ ! "$(ls -A /opt/amix-vimrc-tweaks/my_plugins)" ]; then
+    rmdir /opt/amix-vimrc-tweaks/my_plugins
+fi
+
+
+#DEBHELPER#
