@@ -4,30 +4,13 @@
 
 Over the last 10 years, I have used and tweaked Vim. This configuration is the ultimate vimrc (or at least my version of it).
 
-There are two versions:
-
-* **The Basic**: If you want something small just copy [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim) into your ~/.vimrc and you will have a good basic setup
-* **The Awesome**: Includes a ton of useful plugins, color schemes, and configurations
-
-I would, of course, recommend using the awesome version.
-
-
 ## How to install the Awesome version?
-### Install for your own user only
 The awesome version includes a lot of great plugins, configurations and color schemes that make Vim a lot better. To install it simply do following from your terminal:
 
-	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-	sh ~/.vim_runtime/install_awesome_vimrc.sh
+	git clone --depth=1 https://github.com/antonialoytorrens/vimrc.git /opt/amix-vimrc-tweaks
+	sh /opt/amix-vimrc-tweaks/install_awesome_vimrc.sh
 	
-### Install for multiple users
-To install for multiple users, the repository needs to be cloned to a location accessible for all the intended users.
-
-	git clone --depth=1 https://github.com/amix/vimrc.git /opt/vim_runtime
-	sh /opt/vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime user0 user1 user2
-	# to install for all users with home directories, note that root will not be included
-	sh /opt/vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime --all
-	
-Naturally, `/opt/vim_runtime` can be any directory, as long as all the users specified have read access.
+It is installed system-wide and available for all users.
 
 ## Fonts
 
@@ -37,15 +20,6 @@ Some other fonts that Awesome will try to use:
 
 * [Hack](http://sourcefoundry.org/hack/)
 * [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/)
-
-## How to install the Basic version?
-
-The basic version is just one file and no plugins. Just copy [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim) and paste it into your vimrc.
-
-The basic version is useful to install on remote servers where you don't need many plugins, and you don't do many edits.
-
-	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-	sh ~/.vim_runtime/install_basic_vimrc.sh
 
 
 ## How to install on Windows?
@@ -63,7 +37,7 @@ If you have vim aliased as `vi` instead of `vim`, make sure to either alias it: 
 Just do a git rebase!
 
 
-    cd ~/.vim_runtime
+    cd /opt/amix-vimrc-tweaks
     git reset --hard
     git clean -d --force
     git pull --rebase
@@ -74,9 +48,6 @@ Just do a git rebase!
 Colors when editing a Python file:
 
 ![Screenshot 1](https://dnp4pehkvoo6n.cloudfront.net/07583008e4da885801657e8781777844/as/Python%20editing.png)
-
-[NERD Tree](https://github.com/preservim/nerdtree) plugin in a terminal window:
-![Screenshot 3](https://dnp4pehkvoo6n.cloudfront.net/ae719203166585d64728f28398f4b1b7/as/Terminal%20usage.png)
 
 Distraction free mode using [goyo.vim](https://github.com/junegunn/goyo.vim) and [vim-zenroom2](https://github.com/amix/vim-zenroom2):
 ![Screenshot 4](https://dnp4pehkvoo6n.cloudfront.net/f0dcc4c9739148c56cbf8285a910ac41/as/Zen%20mode.png)
@@ -91,7 +62,6 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): Fuzzy file, buffer, mru and tag finder. It's mapped to `<Ctrl+F>`
 * [goyo.vim](https://github.com/junegunn/goyo.vim) and [vim-zenroom2](https://github.com/amix/vim-zenroom2): 
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline for Vim
-* [NERD Tree](https://github.com/preservim/nerdtree): A tree explorer plugin for vim
 * [open_file_under_cursor.vim](https://github.com/amix/open_file_under_cursor.vim): Open file under cursor when pressing `gf`
 * [pathogen.vim](https://github.com/tpope/vim-pathogen): Manage your vim runtimepath 
 * [snipmate.vim](https://github.com/garbas/vim-snipmate): snipmate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim
@@ -140,27 +110,27 @@ for example `colorscheme pyte`.
 ## How to include your own stuff?
 
 After you have installed the setup,
-create an empty `~/.vim_runtime/my_configs.vim` file for further customization.
+create an empty `/opt/amix-vimrc-tweaks/my_configs.vim` file for further customization.
 This file's syntax matches `vimrc` syntax,
 and add `vimrc` lines like `set number` as needed.
 
 For instance, my `my_configs.vim` looks like this:
 
-	~/.vim_runtime > cat my_configs.vim
+	/opt/amix-vimrc-tweaks > cat my_configs.vim
 	map <leader>ct :cd ~/Desktop/Todoist/todoist<cr>
 	map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr> 
 
 You can also install your plugins, for instance, via pathogen you can install [vim-rails](https://github.com/tpope/vim-rails):
 
-	cd ~/.vim_runtime
+	cd /opt/amix-vimrc-tweaks
 	git clone git://github.com/tpope/vim-rails.git my_plugins/vim-rails
 
 You can also install plugins without any plugin manager (vim 8+ required):
 
 * Create pack plugin directory:\
-`mkdir -p ~/.vim_runtime/pack/plugins/start`
+`mkdir -p /opt/amix-vimrc-tweaks/pack/plugins/start`
 * Clone the plugin that you want in that directory, for example:\
-`git clone --depth=1 git://github.com/maxmellon/vim-jsx-pretty  ~/.vim_runtime/pack/plugins/start/vim-jsx-pretty`
+`git clone --depth=1 git://github.com/maxmellon/vim-jsx-pretty  /opt/amix-vimrc-tweaks/pack/plugins/start/vim-jsx-pretty`
 
 
 ## Key Mappings
@@ -308,12 +278,6 @@ map <leader>f :MRU<CR>
 " Quickly find and open a buffer
 map <leader>b :CtrlPBuffer<cr>
 ```
-[NERD Tree](https://github.com/preservim/nerdtree) mappings:
-```vim
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark 
-map <leader>nf :NERDTreeFind<cr>
-```
 [goyo.vim](https://github.com/junegunn/goyo.vim) and [vim-zenroom2](https://github.com/amix/vim-zenroom2) lets you only focus on one thing at a time. It removes all the distractions and centers the content. It has a special look when editing Markdown, reStructuredText and textfiles. It only has one mapping. (`<leader>z`)
 ```vim
 map <leader>z :Goyo<cr>
@@ -382,7 +346,7 @@ map <leader>s? z=
 ### Running Code
 To run code directly from vim, press `F5`. The currently open code will execute without you having to type anything.
 
-Can be used to execute code written in C, C++, Java, Python, Go, Octave, Bash scripts and HTML. To edit how you want your code to be executed, make changes in the file `~/.vim_runtime/vimrcs/extended.vim`
+Can be used to execute code written in C, C++, Java, Python, Go, Octave, Bash scripts and HTML. To edit how you want your code to be executed, make changes in the file `/opt/amix-vimrc-tweaks/vimrcs/extended.vim`
 
 ### Cope
 Query `:help cope` if you are unsure what cope is. It's super useful!
@@ -406,13 +370,6 @@ map <leader>p :cp<cr>
 
 ## How to uninstall
 Just do following:
-* Remove `~/.vim_runtime`
-* Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
-
-
-## Looking for a remote-first job?
-
-Maintaining this Vim configuration isn't my day job. Daily I am the founder/CEO of [Doist](https://doist.com/). You could come and help us build the workplace of the future while living a balanced life (anywhere in the world 🌍🌎🌏).
-
-PS: Using Vim isn't a requirement 😄
+* Remove `/opt/amix-vimrc-tweaks`
+* Remove any lines that reference `/opt/amix-vimrc-tweaks` in your `~/.vimrc`
 
