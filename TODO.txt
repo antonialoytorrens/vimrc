@@ -1,0 +1,3 @@
+Explore plugins:
+- vim-vinegar: https://github.com/tpope/vim-vinegar.git
+- vim-sensible: https://github.com/tpope/vim-sensible.git
