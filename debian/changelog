@@ -1,3 +1,9 @@
+amix-vimrc-tweaks (2025.01.24+git20241006.46294d5-1) unstable; urgency=medium
+
+  * Removed goyo.vim and vim-zenroom2.
+
+ -- Antoni Aloy Torrens <aaloytorrens@gmail.com>  Fri, 24 Jan 2025 09:23:33 +0100
+
 amix-vimrc-tweaks (2024.10.09+git20241006.46294d5-1) unstable; urgency=medium
 
   * Initial release.
