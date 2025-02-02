@@ -1,3 +1,9 @@
+amix-vimrc-tweaks (2025.02.02+git20241006.46294d5-1) unstable; urgency=medium
+
+  * Removed copilot.vim.
+
+ -- Antoni Aloy Torrens <aaloytorrens@gmail.com>  Sun, 2 Feb 2025 23:32:23 +0100
+
 amix-vimrc-tweaks (2025.01.24+git20241006.46294d5-1) unstable; urgency=medium
 
   * Removed goyo.vim and vim-zenroom2.
