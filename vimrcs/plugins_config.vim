@@ -239,6 +239,35 @@ autocmd FileType go nmap <buffer>gd <Plug>(go-def)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-lsp + asyncomplete (LSP client + completion)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer>gd <plug>(lsp-definition)
+    nmap <buffer>gr <plug>(lsp-references)
+    nmap <buffer>gi <plug>(lsp-implementation)
+    nmap <buffer>K  <plug>(lsp-hover)
+    nmap <buffer><leader>rn <plug>(lsp-rename)
+    nmap <buffer><leader>]  <plug>(lsp-next-diagnostic)
+    nmap <buffer><leader>[  <plug>(lsp-previous-diagnostic)
+endfunction
+
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_float_cursor = 1
+
+" asyncomplete
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-dispatch (async make + quickfix)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>m :Make<cr>

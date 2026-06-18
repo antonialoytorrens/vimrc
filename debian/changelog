@@ -8,6 +8,7 @@ amix-vimrc-tweaks (2026.06.18-1) unstable; urgency=medium
   * Added vim-dispatch for async make and quickfix navigation.
   * Configured ALE linters for C and C++ (gcc/clang, clangtidy).
   * Added vim-go for full Go language support (goimports, go-to-definition, docs, run/build/test).
+  * Added LSP stack: vim-lsp, asyncomplete.vim, asyncomplete-lsp.vim, vim-lsp-settings.
 
  -- Antoni Aloy Torrens <aaloytorrens@gmail.com>  Wed, 18 Jun 2026 00:00:00 +0200
 

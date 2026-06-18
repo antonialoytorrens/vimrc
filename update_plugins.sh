@@ -53,6 +53,10 @@ vim-cpp-enhanced-highlight https://github.com/octol/vim-cpp-enhanced-highlight
 vim-clang-format https://github.com/rhysd/vim-clang-format
 vim-dispatch https://github.com/tpope/vim-dispatch
 vim-go https://github.com/fatih/vim-go
+vim-lsp https://github.com/prabirshrestha/vim-lsp
+asyncomplete.vim https://github.com/prabirshrestha/asyncomplete.vim
+asyncomplete-lsp.vim https://github.com/prabirshrestha/asyncomplete-lsp.vim
+vim-lsp-settings https://github.com/mattn/vim-lsp-settings
 "
 
 if command -v curl >/dev/null 2>&1; then

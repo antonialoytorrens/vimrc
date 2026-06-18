@@ -12,7 +12,7 @@ INSTALL_ITEMS = autoload \
                 sources_forked \
                 sources_non_forked \
                 temp_dirs \
-                update_plugins.py \
+                update_plugins.sh \
                 vimrcs
 
 # Default target: install everything

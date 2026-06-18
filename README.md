@@ -53,6 +53,10 @@ Other fonts the config will try to use:
 * [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides): Visual indent level display
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): EditorConfig support
 * [vim-dispatch](https://github.com/tpope/vim-dispatch): Async `:make` with results in quickfix (`<leader>m`)
+* [vim-lsp](https://github.com/prabirshrestha/vim-lsp): LSP client (go-to-definition, references, rename, hover)
+* [asyncomplete.vim](https://github.com/prabirshrestha/asyncomplete.vim): Async completion popup as you type
+* [asyncomplete-lsp.vim](https://github.com/prabirshrestha/asyncomplete-lsp.vim): Bridge between vim-lsp and asyncomplete
+* [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings): Auto-installs language servers (clangd, gopls, zls, etc.)
 
 
 ## Included Color Schemes
@@ -174,6 +178,22 @@ The [leader](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html#lead
 | `<leader>sn` / `<leader>sp` | Next / previous misspelling |
 | `<leader>sa` | Add word to dictionary |
 | `<leader>s?` | Suggest corrections |
+
+### LSP (vim-lsp + asyncomplete)
+
+| Mapping | Action |
+|---------|--------|
+| `gd` | Go to definition |
+| `gr` | Find references |
+| `gi` | Go to implementation |
+| `K` | Hover / show docs |
+| `<leader>rn` | Rename symbol |
+| `<leader>]` | Next diagnostic |
+| `<leader>[` | Previous diagnostic |
+| `<Tab>` / `<S-Tab>` | Navigate completion popup |
+| `<CR>` | Confirm completion |
+
+Run `:LspInstallServer` inside a file to auto-install the language server for that filetype (clangd for C/C++, gopls for Go, zls for Zig, etc.).
 
 ### C/C++ and Clang
 
