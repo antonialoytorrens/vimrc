@@ -1,6 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important: 
-"       This requires that you install https://github.com/amix/vimrc !
+" Maintainer:
+"       Antoni Aloy Torrens
+"       Forked from https://github.com/amix/vimrc
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

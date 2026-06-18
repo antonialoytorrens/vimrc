@@ -1,6 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important:
-"       This requires that you install https://github.com/amix/vimrc !
+" Maintainer:
+"       Antoni Aloy Torrens
+"       Forked from https://github.com/amix/vimrc
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -140,7 +141,9 @@ let g:lightline = {
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'python': ['flake8'],
-\   'go': ['go', 'golint', 'errcheck']
+\   'go': ['go', 'golint', 'errcheck'],
+\   'c': ['cc', 'clangtidy'],
+\   'cpp': ['cc', 'clangtidy'],
 \}
 
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
@@ -173,3 +176,70 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " Copy the link to the line of a Git repository to the clipboard
 nnoremap <leader>v :.GBrowse!<CR>
 xnoremap <leader>v :GBrowse!<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => zig.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:zig_fmt_autosave = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-cpp-enhanced-highlight
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_template_highlight = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-clang-format
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format_on_insert_leave = 0
+map <leader>cf :ClangFormat<cr>
+autocmd FileType c,cpp,objc nnoremap <buffer><leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><leader>cf :ClangFormat<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => termdebug (GDB, built-in vim 8.1+)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('terminal') && exists(':packadd')
+    packadd termdebug
+    let g:termdebug_wide = 1
+    nnoremap <leader>dd :Termdebug<cr>
+    nnoremap <leader>dc :Continue<cr>
+    nnoremap <leader>dn :Over<cr>
+    nnoremap <leader>ds :Step<cr>
+    nnoremap <leader>db :Break<cr>
+    nnoremap <leader>dr :Run<cr>
+endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_fmt_command = 'goimports'
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+
+autocmd FileType go nmap <buffer><leader>gr <Plug>(go-run)
+autocmd FileType go nmap <buffer><leader>gb <Plug>(go-build)
+autocmd FileType go nmap <buffer><leader>gt <Plug>(go-test)
+autocmd FileType go nmap <buffer><leader>gd <Plug>(go-doc)
+autocmd FileType go nmap <buffer>gd <Plug>(go-def)
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-dispatch (async make + quickfix)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>m :Make<cr>
+nnoremap <leader>M :Make!<cr>

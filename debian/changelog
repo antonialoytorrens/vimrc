@@ -1,3 +1,16 @@
+amix-vimrc-tweaks (2026.06.18-1) unstable; urgency=medium
+
+  * Updated README to reflect personal fork of amix/vimrc.
+  * Removed amix branding from vimrc source file headers.
+  * Added C/C++ plugins: vim-cpp-enhanced-highlight, vim-clang-format.
+  * Added Zig language support via zig.vim.
+  * Added GDB integration via built-in termdebug.
+  * Added vim-dispatch for async make and quickfix navigation.
+  * Configured ALE linters for C and C++ (gcc/clang, clangtidy).
+  * Added vim-go for full Go language support (goimports, go-to-definition, docs, run/build/test).
+
+ -- Antoni Aloy Torrens <aaloytorrens@gmail.com>  Wed, 18 Jun 2026 00:00:00 +0200
+
 amix-vimrc-tweaks (2025.02.02+git20241006.46294d5-1) unstable; urgency=medium
 
   * Removed copilot.vim.
