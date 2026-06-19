@@ -2,15 +2,4 @@
 
 set -e
 
-if [ ! -d /opt/amix-vimrc-tweaks/my_plugins ]; then
-    mkdir -p /opt/amix-vimrc-tweaks/my_plugins
-fi
-chmod 777 /opt/amix-vimrc-tweaks/my_plugins
-
-if [ ! -f /opt/amix-vimrc-tweaks/my_configs.vim ]; then
-    touch /opt/amix-vimrc-tweaks/my_configs.vim
-    chmod 777 /opt/amix-vimrc-tweaks
-    chmod 777 /opt/amix-vimrc-tweaks/my_configs.vim
-fi
-
 #DEBHELPER#

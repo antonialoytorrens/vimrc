@@ -18,7 +18,6 @@ set packpath+=~/.vim_runtime
 let s:vim_runtime = expand('<sfile>:p:h')."/.."
 call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
 call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
-call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
 call pathogen#helptags()
 
 
@@ -107,7 +106,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 " Annotate strings with gettext 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap Si S(i_<esc>f)
-au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -203,20 +201,6 @@ map <leader>cf :ClangFormat<cr>
 autocmd FileType c,cpp,objc nnoremap <buffer><leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><leader>cf :ClangFormat<CR>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => termdebug (GDB, built-in vim 8.1+)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('terminal') && exists(':packadd')
-    packadd termdebug
-    let g:termdebug_wide = 1
-    nnoremap <leader>dd :Termdebug<cr>
-    nnoremap <leader>dc :Continue<cr>
-    nnoremap <leader>dn :Over<cr>
-    nnoremap <leader>ds :Step<cr>
-    nnoremap <leader>db :Break<cr>
-    nnoremap <leader>dr :Run<cr>
-endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

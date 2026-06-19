@@ -4,4 +4,4 @@
 	dh $@
 
 override_dh_auto_build:
-	dh_auto_build -- DESTDIR=$(CURDIR)/debian/amix-vimrc-tweaks INSTALL_DIR=/opt/amix-vimrc-tweaks VIMRC_DIR=/etc/vim VIMRC_FILE=vimrc.local
+	dh_auto_build -- DESTDIR=$(CURDIR)/debian/aat-vimrc INSTALL_DIR=/opt/aat-vimrc VIMRC_DIR=/etc/vim VIMRC_FILE=vimrc.local

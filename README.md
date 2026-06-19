@@ -1,27 +1,29 @@
-# Antoni's vimrc
+# My vimrc
 
 Personal Vim configuration, forked from [amix/vimrc](https://github.com/amix/vimrc) with personal tweaks. Installs system-wide and is available for all users.
 
 ## Installation
 
 ```bash
-git clone --depth=1 https://github.com/antonialoytorrens/vimrc.git /opt/amix-vimrc-tweaks
-cd /opt/amix-vimrc-tweaks
+git clone --depth=1 https://github.com/antonialoytorrens/vimrc.git /opt/aat-vimrc
+cd /opt/aat-vimrc
 sudo make install
 ```
 
 ## Updating
 
 ```bash
-cd /opt/amix-vimrc-tweaks
+cd /opt/aat-vimrc
 git pull --rebase
 sudo make install
 ```
 
 ## Uninstalling
 
-* Remove `/opt/amix-vimrc-tweaks`
-* Remove `/etc/vim/vimrc.local`
+```bash
+cd /opt/aat-vimrc
+sudo make uninstall
+```
 
 
 ## Fonts
@@ -61,7 +63,7 @@ Other fonts the config will try to use:
 
 ## Included Color Schemes
 
-Type `:colorscheme <Tab>` to browse, or set one in `my_configs.vim`.
+Type `:colorscheme <Tab>` to browse (current session only). To make a change permanent, edit `vimrcs/extended.vim`.
 
 * [peaksea](https://github.com/vim-scripts/peaksea): Default
 * [dracula](https://github.com/dracula/vim)
@@ -74,9 +76,7 @@ Type `:colorscheme <Tab>` to browse, or set one in `my_configs.vim`.
 
 ## Included Language Support
 
-* [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
-* [vim-less](https://github.com/groenewege/vim-less)
-* [vim-bundle-mako](https://github.com/sophacles/vim-bundle-mako)
+* [vim-jinja](https://github.com/lepture/vim-jinja): Jinja2 syntax for Flask/Django templates (`.jinja`, `.jinja2`); Vim auto-detects Django templates in `.html` files
 * [vim-markdown](https://github.com/plasticboy/vim-markdown)
 * [nginx.vim](https://github.com/vim-scripts/nginx.vim)
 * [rust.vim](https://github.com/rust-lang/rust.vim)
@@ -88,23 +88,6 @@ Type `:colorscheme <Tab>` to browse, or set one in `my_configs.vim`.
 * [zig.vim](https://github.com/ziglang/zig.vim): Zig syntax, indent, and `zig fmt` on save
 * [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight): Enhanced C/C++ syntax (class scope, member variables, templates)
 * [vim-clang-format](https://github.com/rhysd/vim-clang-format): Run `clang-format` with `<leader>cf`; respects `.clang-format` files
-
-
-## How to Add Your Own Customizations
-
-Create `/opt/amix-vimrc-tweaks/my_configs.vim` and add any extra `vimrc`-syntax lines there. Example:
-
-```vim
-set number
-colorscheme gruvbox
-```
-
-To add plugins via pathogen:
-
-```bash
-cd /opt/amix-vimrc-tweaks
-git clone git://github.com/tpope/vim-rails.git my_plugins/vim-rails
-```
 
 
 ## Key Mappings
@@ -205,16 +188,13 @@ Run `:LspInstallServer` inside a file to auto-install the language server for th
 | `<leader>M` | Run `make` in background (no quickfix focus) |
 | `<leader>n` / `<leader>p` | Next / previous quickfix error |
 
-### GDB (termdebug, vim 8.1+ with `+terminal`)
+### GDB (termdebug)
 
-| Mapping | Action |
-|---------|--------|
-| `<leader>dd` | Start Termdebug |
-| `<leader>dr` | Run program |
-| `<leader>db` | Set breakpoint at cursor |
-| `<leader>dc` | Continue |
-| `<leader>dn` | Next (step over) |
-| `<leader>ds` | Step (step into) |
+Load manually when needed:
+
+```vim
+:packadd termdebug
+```
 
 ### Cope (quickfix)
 

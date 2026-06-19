@@ -1,14 +1,16 @@
-Source: amix-vimrc-tweaks
+Source: aat-vimrc
 Section: editors
 Priority: optional
 Maintainer: Antoni Aloy Torrens <aaloytorrens@gmail.com>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 3.9.6
 
-Package: amix-vimrc-tweaks
+Package: aat-vimrc
 Architecture: all
 Depends:
  ${misc:Depends},
  vim
+Recommends:
+ fonts-ibm-plex | fonts-hack
 Description: The ultimate vimrc configuration from amix with tweaks
  The ultimate vimrc configuration forked from vimrc with additional tweaks
