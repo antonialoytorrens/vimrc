@@ -47,4 +47,16 @@ uninstall:
 	@echo "Uninstalled successfully."
 
 # Phony targets to avoid conflicts with directories or files named 'install' or 'clean'
-.PHONY: install clean uninstall
+.PHONY: install clean uninstall sonarqube
+
+# --- SonarQube ---
+ifneq (,$(wildcard ./.env))
+include .env
+export
+endif
+
+sonarqube:
+	sonar-scanner \
+		-Dsonar.token=$(SONAR_TOKEN) \
+		-Dsonar.host.url=$(SONAR_HOST_URL) \
+		-Dsonar.projectKey=$(SONAR_PROJECT_KEY)
